@@ -380,7 +380,7 @@
                         <outletCollection property="boardBox" destination="tTS-Il-jER" collectionClass="NSMutableArray" id="kNV-mg-Wr7"/>
                         <outletCollection property="boardBox" destination="IUD-kg-HZl" collectionClass="NSMutableArray" id="grf-8p-STf"/>
                         <outletCollection property="boardBox" destination="KWz-ot-995" collectionClass="NSMutableArray" id="jor-RI-Liy"/>
-                        <outletCollection property="boardBox" destination="qdO-YH-Xea" collectionClass="NSMutableArray" id="1wt-pw-xc7"/>
+                        <outletCollection property="boardBox" destination="qdO-YH-Xea" collectionClass="NSMutableArray" id="EKh-7y-Qyo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHx-yq-NKq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
