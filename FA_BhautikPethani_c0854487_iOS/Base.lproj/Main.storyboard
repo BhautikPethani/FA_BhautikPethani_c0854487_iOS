@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iTU-VR-hyA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -68,7 +68,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="iTU-VR-hyA" kind="showDetail" id="PDb-t5-Hfa"/>
+                                    <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fda-ta-68f"/>
+                                    <segue destination="iTU-VR-hyA" kind="presentation" identifier="boardView" modalPresentationStyle="fullScreen" id="PDb-t5-Hfa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDj-RU-pQq">
@@ -116,6 +117,9 @@
                             <constraint firstItem="fnk-iP-4Qj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="144" id="z3v-ES-eaW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="continueBtn" destination="UDj-RU-pQq" id="iAn-3e-SUa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,7 +128,7 @@
         <!--Board View Controller-->
         <scene sceneID="qUI-gr-Xtf">
             <objects>
-                <viewController id="iTU-VR-hyA" customClass="BoardViewController" customModule="FA_BhautikPethani_c0854487_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" id="iTU-VR-hyA" customClass="BoardViewController" customModule="FA_BhautikPethani_c0854487_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w0V-Jt-t8h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,7 +142,7 @@
                                 <color key="textColor" red="0.12549020350000001" green="0.1647058874" blue="0.38823530080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1 : 20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89V-uc-3MM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1 : 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89V-uc-3MM">
                                 <rect key="frame" x="37" y="98" width="146" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="89V-uc-3MM" secondAttribute="height" multiplier="73:11" id="UFa-xx-6Bm"/>
@@ -147,7 +151,7 @@
                                 <color key="textColor" red="1" green="0.2277272316" blue="0.59896724810000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2 : 9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sf-NH-QdW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2 : 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sf-NH-QdW">
                                 <rect key="frame" x="191" y="98" width="146" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4sf-NH-QdW" secondAttribute="height" multiplier="73:11" id="X8K-bQ-v0M"/>
@@ -205,89 +209,107 @@
                                     <constraint firstItem="5zB-7J-JSj" firstAttribute="leading" secondItem="bN8-HZ-l9c" secondAttribute="trailing" constant="15" id="wCe-TH-kNL"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleAspectFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="150" axis="vertical" distribution="fillEqually" spacing="10" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rSS-4b-9SK" userLabel="Board view">
+                            <stackView opaque="NO" contentMode="scaleAspectFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="150" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rSS-4b-9SK" userLabel="Board view">
                                 <rect key="frame" x="37" y="291" width="300" height="290"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="90" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6i3-Gh-SsP">
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="90" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="z2L-kY-3wu">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="90"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUD-kg-HZl" userLabel="1">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Aa-A0-ouD" userLabel="1">
                                                 <rect key="frame" x="0.0" y="0.0" width="93.333333333333329" height="90"/>
-                                                <color key="backgroundColor" red="0.87450981139999995" green="0.80000001190000003" blue="0.90196073060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <color key="backgroundColor" red="0.875" green="0.80000000000000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="boardTapped:" destination="iTU-VR-hyA" eventType="touchUpInside" id="yAd-FA-qTy"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWz-ot-995" userLabel="2">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7F-Ke-GCT" userLabel="2">
                                                 <rect key="frame" x="103.33333333333334" y="0.0" width="93.333333333333343" height="90"/>
                                                 <color key="backgroundColor" red="0.70588237050000002" green="0.75294119120000003" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="boardTapped:" destination="iTU-VR-hyA" eventType="touchUpInside" id="JSt-zl-wX4"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdO-YH-Xea" userLabel="3">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VoQ-TX-7eD" userLabel="3">
                                                 <rect key="frame" x="206.66666666666666" y="0.0" width="93.333333333333343" height="90"/>
-                                                <color key="backgroundColor" red="0.87450981139999995" green="0.80000001190000003" blue="0.90196073060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <color key="backgroundColor" red="0.87450980389999999" green="0.80000000000000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="boardTapped:" destination="iTU-VR-hyA" eventType="touchUpInside" id="u9J-UC-zjB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="90" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TlY-ge-q4z">
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="90" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cug-cF-WCM">
                                         <rect key="frame" x="0.0" y="100" width="300" height="90"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eew-Sn-vTw" userLabel="4">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSZ-xg-hnd" userLabel="4">
                                                 <rect key="frame" x="0.0" y="0.0" width="93.333333333333329" height="90"/>
-                                                <color key="backgroundColor" red="0.70588237050000002" green="0.75294119120000003" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <color key="backgroundColor" red="0.875" green="0.80000000000000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="boardTapped:" destination="iTU-VR-hyA" eventType="touchUpInside" id="9aR-pT-4uG"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g58-5C-ZWc" userLabel="5">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lof-O4-n4B" userLabel="5">
                                                 <rect key="frame" x="103.33333333333334" y="0.0" width="93.333333333333343" height="90"/>
-                                                <color key="backgroundColor" red="0.87450981139999995" green="0.80000001190000003" blue="0.90196073060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAC-sp-iKd" userLabel="6">
-                                                <rect key="frame" x="206.66666666666666" y="0.0" width="93.333333333333343" height="90"/>
                                                 <color key="backgroundColor" red="0.70588237050000002" green="0.75294119120000003" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="boardTapped:" destination="iTU-VR-hyA" eventType="touchUpInside" id="IVr-Gp-cxq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTS-Il-jER" userLabel="6">
+                                                <rect key="frame" x="206.66666666666666" y="0.0" width="93.333333333333343" height="90"/>
+                                                <color key="backgroundColor" red="0.87450980389999999" green="0.80000000000000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="boardTapped:" destination="iTU-VR-hyA" eventType="touchUpInside" id="e2F-54-OlL"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="90" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h3G-q5-jkf">
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="90" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6i3-Gh-SsP">
                                         <rect key="frame" x="0.0" y="200" width="300" height="90"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RL-nt-zem" userLabel="7">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUD-kg-HZl" userLabel="7">
                                                 <rect key="frame" x="0.0" y="0.0" width="93.333333333333329" height="90"/>
-                                                <color key="backgroundColor" red="0.87450981139999995" green="0.80000001190000003" blue="0.90196073060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <color key="backgroundColor" red="0.875" green="0.80000000000000004" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="boardTapped:" destination="iTU-VR-hyA" eventType="touchUpInside" id="Zx1-8u-f9r"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5RO-KC-rkg" userLabel="8">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWz-ot-995" userLabel="8">
                                                 <rect key="frame" x="103.33333333333334" y="0.0" width="93.333333333333343" height="90"/>
                                                 <color key="backgroundColor" red="0.70588237050000002" green="0.75294119120000003" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="boardTapped:" destination="iTU-VR-hyA" eventType="touchUpInside" id="9mp-oU-dj1"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltP-Gl-sx5" userLabel="9">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdO-YH-Xea" userLabel="9">
                                                 <rect key="frame" x="206.66666666666666" y="0.0" width="93.333333333333343" height="90"/>
-                                                <color key="backgroundColor" red="0.87450981139999995" green="0.80000001190000003" blue="0.90196073060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <color key="backgroundColor" red="0.87450980392156863" green="0.80000000000000004" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="boardTapped:" destination="iTU-VR-hyA" eventType="touchUpInside" id="Fpk-fO-SXe"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.91764706370000004" green="0.92156863209999995" blue="0.98823523520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="rSS-4b-9SK" secondAttribute="height" multiplier="30:29" id="z0D-vx-Tgf"/>
+                                    <constraint firstAttribute="width" secondItem="rSS-4b-9SK" secondAttribute="height" multiplier="30:29" id="ScN-c8-vZy"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" placeholderIntrinsicWidth="210" placeholderIntrinsicHeight="60" distribution="fillEqually" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="Itz-74-gM3" userLabel="Footer View">
-                                <rect key="frame" x="90" y="597" width="210" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="60" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="Itz-74-gM3" userLabel="Footer View">
+                                <rect key="frame" x="47" y="599" width="280" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="try-hM-Jms">
-                                        <rect key="frame" x="0.0" y="0.0" width="70" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="79.333333333333329" height="60"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <backgroundConfiguration key="background" cornerRadius="50" image="reload_btn.png" imageContentMode="scaleAspectFit">
@@ -295,8 +317,8 @@
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mB2-gZ-ocx">
-                                        <rect key="frame" x="140" y="0.0" width="70" height="60"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcD-NB-Itq">
+                                        <rect key="frame" x="100.33333333333334" y="0.0" width="79.333333333333343" height="60"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <backgroundConfiguration key="background" cornerRadius="50" image="pause_btn.png" imageContentMode="scaleAspectFit">
@@ -304,40 +326,62 @@
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mB2-gZ-ocx">
+                                        <rect key="frame" x="200.66666666666666" y="0.0" width="79.333333333333343" height="60"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <backgroundConfiguration key="background" cornerRadius="50" image="noMusic.png" imageContentMode="scaleAspectFit">
+                                                <color key="backgroundColor" red="1" green="0.2277272316" blue="0.59896724810000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.91764706370000004" green="0.92156863209999995" blue="0.98823523520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Itz-74-gM3" secondAttribute="height" multiplier="7:2" id="Kov-nK-MPq"/>
+                                    <constraint firstAttribute="width" secondItem="Itz-74-gM3" secondAttribute="height" multiplier="14:3" id="Lyz-0a-34W"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDA-JN-FtK"/>
                         <color key="backgroundColor" red="0.91764706370000004" green="0.92156863209999995" blue="0.98823523520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="vDA-JN-FtK" firstAttribute="trailing" secondItem="Itz-74-gM3" secondAttribute="trailing" constant="48" id="01J-y9-PJq"/>
                             <constraint firstItem="1sf-4o-bhU" firstAttribute="top" secondItem="4sf-NH-QdW" secondAttribute="bottom" constant="8" id="5Ns-0b-0A4"/>
-                            <constraint firstItem="vDA-JN-FtK" firstAttribute="trailing" secondItem="Itz-74-gM3" secondAttribute="trailing" constant="75" id="7T8-x0-OWc"/>
-                            <constraint firstItem="Itz-74-gM3" firstAttribute="top" secondItem="rSS-4b-9SK" secondAttribute="bottom" constant="16" id="Bai-aK-0NQ"/>
                             <constraint firstItem="1sf-4o-bhU" firstAttribute="top" secondItem="89V-uc-3MM" secondAttribute="bottom" constant="8" id="EPI-aB-AjF"/>
                             <constraint firstItem="4sf-NH-QdW" firstAttribute="leading" secondItem="89V-uc-3MM" secondAttribute="trailing" constant="8" id="FMG-yq-dpo"/>
+                            <constraint firstItem="rSS-4b-9SK" firstAttribute="leading" secondItem="vDA-JN-FtK" secondAttribute="leading" constant="37" id="HQB-k2-Udg"/>
                             <constraint firstItem="1sf-4o-bhU" firstAttribute="top" secondItem="89V-uc-3MM" secondAttribute="bottom" constant="8" id="HWu-Ag-ziG"/>
+                            <constraint firstItem="vDA-JN-FtK" firstAttribute="trailing" secondItem="rSS-4b-9SK" secondAttribute="trailing" constant="38" id="LGi-23-Qsy"/>
+                            <constraint firstItem="rSS-4b-9SK" firstAttribute="top" secondItem="1sf-4o-bhU" secondAttribute="bottom" constant="8" id="LYP-tK-6VX"/>
                             <constraint firstItem="AMg-E5-DhB" firstAttribute="top" secondItem="w0V-Jt-t8h" secondAttribute="top" constant="49" id="MOR-CT-TZJ"/>
                             <constraint firstItem="4sf-NH-QdW" firstAttribute="top" secondItem="AMg-E5-DhB" secondAttribute="bottom" constant="8" id="NlP-yJ-RZJ"/>
-                            <constraint firstItem="rSS-4b-9SK" firstAttribute="leading" secondItem="vDA-JN-FtK" secondAttribute="leading" constant="37" id="NrL-Nd-zJ4"/>
                             <constraint firstItem="4sf-NH-QdW" firstAttribute="leading" secondItem="89V-uc-3MM" secondAttribute="trailing" constant="8" id="NzQ-HU-mc4"/>
                             <constraint firstItem="AMg-E5-DhB" firstAttribute="leading" secondItem="w0V-Jt-t8h" secondAttribute="leading" constant="126" id="SMW-KM-JlD"/>
                             <constraint firstItem="1sf-4o-bhU" firstAttribute="leading" secondItem="vDA-JN-FtK" secondAttribute="leading" constant="16" id="SMh-Zr-JgK"/>
                             <constraint firstItem="vDA-JN-FtK" firstAttribute="trailing" secondItem="4sf-NH-QdW" secondAttribute="trailing" constant="38" id="Ub2-Wq-zdN"/>
+                            <constraint firstItem="Itz-74-gM3" firstAttribute="top" secondItem="rSS-4b-9SK" secondAttribute="bottom" constant="18" id="VKu-AV-Wax"/>
                             <constraint firstItem="89V-uc-3MM" firstAttribute="leading" secondItem="vDA-JN-FtK" secondAttribute="leading" constant="37" id="Vf4-XA-x9e"/>
-                            <constraint firstItem="vDA-JN-FtK" firstAttribute="trailing" secondItem="rSS-4b-9SK" secondAttribute="trailing" constant="38" id="WoU-GD-pyW"/>
-                            <constraint firstItem="Itz-74-gM3" firstAttribute="leading" secondItem="vDA-JN-FtK" secondAttribute="leading" constant="90" id="XoP-Js-bvE"/>
+                            <constraint firstItem="Itz-74-gM3" firstAttribute="leading" secondItem="vDA-JN-FtK" secondAttribute="leading" constant="47" id="X9v-8L-m6S"/>
                             <constraint firstItem="89V-uc-3MM" firstAttribute="top" secondItem="AMg-E5-DhB" secondAttribute="bottom" constant="8" id="bAV-UI-WwN"/>
                             <constraint firstAttribute="trailing" secondItem="AMg-E5-DhB" secondAttribute="trailing" constant="110" id="iQ6-4p-b8G"/>
                             <constraint firstItem="89V-uc-3MM" firstAttribute="top" secondItem="AMg-E5-DhB" secondAttribute="bottom" constant="8" id="jxj-dy-nLl"/>
                             <constraint firstItem="vDA-JN-FtK" firstAttribute="trailing" secondItem="1sf-4o-bhU" secondAttribute="trailing" constant="16" id="pgX-Xq-qxb"/>
-                            <constraint firstItem="rSS-4b-9SK" firstAttribute="top" secondItem="1sf-4o-bhU" secondAttribute="bottom" constant="8" id="qkN-NB-xPZ"/>
                         </constraints>
                     </view>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="player1Img" destination="bN8-HZ-l9c" id="8yC-8h-SFi"/>
+                        <outlet property="player2Img" destination="kRE-eR-Sbb" id="rhH-5v-vQr"/>
+                        <outletCollection property="boardBox" destination="0Aa-A0-ouD" collectionClass="NSMutableArray" id="mHv-RU-vnV"/>
+                        <outletCollection property="boardBox" destination="k7F-Ke-GCT" collectionClass="NSMutableArray" id="hVB-O1-EHU"/>
+                        <outletCollection property="boardBox" destination="VoQ-TX-7eD" collectionClass="NSMutableArray" id="Luo-MW-6cS"/>
+                        <outletCollection property="boardBox" destination="FSZ-xg-hnd" collectionClass="NSMutableArray" id="lrV-jj-qwM"/>
+                        <outletCollection property="boardBox" destination="Lof-O4-n4B" collectionClass="NSMutableArray" id="hcg-ev-Smn"/>
+                        <outletCollection property="boardBox" destination="tTS-Il-jER" collectionClass="NSMutableArray" id="kNV-mg-Wr7"/>
+                        <outletCollection property="boardBox" destination="IUD-kg-HZl" collectionClass="NSMutableArray" id="grf-8p-STf"/>
+                        <outletCollection property="boardBox" destination="KWz-ot-995" collectionClass="NSMutableArray" id="jor-RI-Liy"/>
+                        <outletCollection property="boardBox" destination="qdO-YH-Xea" collectionClass="NSMutableArray" id="1wt-pw-xc7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHx-yq-NKq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -347,6 +391,7 @@
     <resources>
         <image name="Player1.png" width="360" height="360"/>
         <image name="Player2.png" width="360" height="360"/>
+        <image name="noMusic.png" width="360" height="360"/>
         <image name="pause_btn.png" width="360" height="360"/>
         <image name="reload_btn.png" width="360" height="360"/>
         <image name="textLogo.png" width="360" height="144"/>

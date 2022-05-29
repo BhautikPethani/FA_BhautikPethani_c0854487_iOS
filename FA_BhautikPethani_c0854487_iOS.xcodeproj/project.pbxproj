@@ -11,6 +11,10 @@
 		ED87953D2842D88300B65BFF /* Player2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED87953B2842D88300B65BFF /* Player2.png */; };
 		ED8795432842F45100B65BFF /* reload_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8795422842F45100B65BFF /* reload_btn.png */; };
 		ED8795452843048800B65BFF /* pause_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8795442843048800B65BFF /* pause_btn.png */; };
+		ED879548284309E800B65BFF /* music.png in Resources */ = {isa = PBXBuildFile; fileRef = ED879546284309E800B65BFF /* music.png */; };
+		ED879549284309E800B65BFF /* noMusic.png in Resources */ = {isa = PBXBuildFile; fileRef = ED879547284309E800B65BFF /* noMusic.png */; };
+		ED87955028430DD500B65BFF /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = ED87954E28430DD500B65BFF /* cross.png */; };
+		ED87955128430DD500B65BFF /* noughtSign.png in Resources */ = {isa = PBXBuildFile; fileRef = ED87954F28430DD500B65BFF /* noughtSign.png */; };
 		EDAD182D28418CE1006A3B92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAD182C28418CE1006A3B92 /* AppDelegate.swift */; };
 		EDAD182F28418CE1006A3B92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAD182E28418CE1006A3B92 /* SceneDelegate.swift */; };
 		EDAD183128418CE1006A3B92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAD183028418CE1006A3B92 /* ViewController.swift */; };
@@ -31,6 +35,10 @@
 		ED87953B2842D88300B65BFF /* Player2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Player2.png; path = ../../../../../../Player2.png; sourceTree = "<group>"; };
 		ED8795422842F45100B65BFF /* reload_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reload_btn.png; path = ../../../../../../reload_btn.png; sourceTree = "<group>"; };
 		ED8795442843048800B65BFF /* pause_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause_btn.png; path = ../../../../../../pause_btn.png; sourceTree = "<group>"; };
+		ED879546284309E800B65BFF /* music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music.png; sourceTree = "<group>"; };
+		ED879547284309E800B65BFF /* noMusic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noMusic.png; sourceTree = "<group>"; };
+		ED87954E28430DD500B65BFF /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cross.png; path = ../../../../../../cross.png; sourceTree = "<group>"; };
+		ED87954F28430DD500B65BFF /* noughtSign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noughtSign.png; path = ../../../../../../noughtSign.png; sourceTree = "<group>"; };
 		EDAD182928418CE1006A3B92 /* FA_BhautikPethani_c0854487_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FA_BhautikPethani_c0854487_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDAD182C28418CE1006A3B92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDAD182E28418CE1006A3B92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +104,10 @@
 		EDBB787328419DA000BC1E94 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				ED87954E28430DD500B65BFF /* cross.png */,
+				ED87954F28430DD500B65BFF /* noughtSign.png */,
+				ED879546284309E800B65BFF /* music.png */,
+				ED879547284309E800B65BFF /* noMusic.png */,
 				ED8795442843048800B65BFF /* pause_btn.png */,
 				ED8795422842F45100B65BFF /* reload_btn.png */,
 				ED87953A2842D88300B65BFF /* Player1.png */,
@@ -190,18 +202,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED87955028430DD500B65BFF /* cross.png in Resources */,
 				EDAD183C28418CE3006A3B92 /* LaunchScreen.storyboard in Resources */,
 				EDBB78852842AC6F00BC1E94 /* textLogo2.png in Resources */,
 				EDBB787B2842934500BC1E94 /* LaoutBeauty.otf in Resources */,
 				ED87953D2842D88300B65BFF /* Player2.png in Resources */,
 				ED87953C2842D88300B65BFF /* Player1.png in Resources */,
 				EDAD183928418CE3006A3B92 /* Assets.xcassets in Resources */,
+				ED87955128430DD500B65BFF /* noughtSign.png in Resources */,
+				ED879549284309E800B65BFF /* noMusic.png in Resources */,
 				EDBB787528419DB200BC1E94 /* splashScreen.gif in Resources */,
 				ED8795432842F45100B65BFF /* reload_btn.png in Resources */,
 				EDBB78872842B34300BC1E94 /* vs.png in Resources */,
 				ED8795452843048800B65BFF /* pause_btn.png in Resources */,
 				EDBB78832842A9EC00BC1E94 /* textLogo.png in Resources */,
 				EDAD183428418CE1006A3B92 /* Main.storyboard in Resources */,
+				ED879548284309E800B65BFF /* music.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
