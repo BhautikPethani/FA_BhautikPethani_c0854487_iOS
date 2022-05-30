@@ -321,19 +321,26 @@
                                         <rect key="frame" x="100.33333333333334" y="0.0" width="79.333333333333343" height="60"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
-                                            <backgroundConfiguration key="background" cornerRadius="50" image="pause_btn.png" imageContentMode="scaleAspectFit">
+                                            <backgroundConfiguration key="background" cornerRadius="50" image="home.png" imageContentMode="scaleAspectFit">
                                                 <color key="backgroundColor" red="1" green="0.2277272316" blue="0.59896724810000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mB2-gZ-ocx">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mB2-gZ-ocx">
                                         <rect key="frame" x="200.66666666666666" y="0.0" width="79.333333333333343" height="60"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <backgroundConfiguration key="background" cornerRadius="50" image="noMusic.png" imageContentMode="scaleAspectFit">
-                                                <color key="backgroundColor" red="1" green="0.2277272316" blue="0.59896724810000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </backgroundConfiguration>
-                                        </buttonConfiguration>
+                                        <color key="backgroundColor" red="1" green="0.2277272316" blue="0.59896724810000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" backgroundImage="music.png">
+                                            <color key="titleColor" red="1" green="0.2277272316" blue="0.59896724810000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="35"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="audioStateChanged:" destination="iTU-VR-hyA" eventType="touchUpInside" id="rZp-Qh-xPG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.91764706370000004" green="0.92156863209999995" blue="0.98823523520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -370,6 +377,7 @@
                     </view>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="audioBtn" destination="mB2-gZ-ocx" id="u5u-jt-5p5"/>
                         <outlet property="player1Img" destination="bN8-HZ-l9c" id="8yC-8h-SFi"/>
                         <outlet property="player2Img" destination="kRE-eR-Sbb" id="rhH-5v-vQr"/>
                         <outletCollection property="boardBox" destination="0Aa-A0-ouD" collectionClass="NSMutableArray" id="mHv-RU-vnV"/>
@@ -391,8 +399,8 @@
     <resources>
         <image name="Player1.png" width="360" height="360"/>
         <image name="Player2.png" width="360" height="360"/>
-        <image name="noMusic.png" width="360" height="360"/>
-        <image name="pause_btn.png" width="360" height="360"/>
+        <image name="home.png" width="360" height="360"/>
+        <image name="music.png" width="360" height="360"/>
         <image name="reload_btn.png" width="360" height="360"/>
         <image name="textLogo.png" width="360" height="144"/>
         <image name="vs.png" width="360" height="144"/>

@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import AVFoundation
 
 class BoardViewController: UIViewController {
 
     @IBOutlet weak var player1Img: UIImageView!
     @IBOutlet weak var player2Img: UIImageView!
+    @IBOutlet weak var audioBtn: UIButton!
     
     @IBOutlet var boardBox: [UIButton]!
     
@@ -26,12 +28,31 @@ class BoardViewController: UIViewController {
     var board = [[0,0,0],[0,0,0],[0,0,0]]
     var counter = 1
     
+    var audioPlayer = AVAudioPlayer()
+    var audioFile = Bundle.main.path(forResource: "background_music", ofType: "mp3")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioFile!))
+        } catch{
+            print(error)
+        }
+        
         turnChange()
         resetBoard()
-        // Do any additional setup after loading the view.
+    }
+    
+    func changeAudioState(){
+        if(audioPlayer.isPlaying){
+            audioPlayer.stop()
+            audioBtn.setBackgroundImage(UIImage(named: "music"), for: .normal)
+        }else{
+            print("is not playing")
+            audioPlayer.play()
+            audioBtn.setBackgroundImage(UIImage(named: "noMusic"), for: .normal)
+        }
     }
     
     func turnChange(){
@@ -82,9 +103,11 @@ class BoardViewController: UIViewController {
         (player1) ? sender.setBackgroundImage(UIImage(named: "cross"), for: .normal) : sender.setBackgroundImage(UIImage(named: "noughtSign"), for: .normal)
         
         
-        if(checkResult()){
-            print ("Win");
-            disableAllButtons()
+        if(counter>=5){
+            if(checkResult()){
+                print ("Win");
+                disableAllButtons()
+            }
         }
         
         sender.isUserInteractionEnabled = false
@@ -144,6 +167,11 @@ class BoardViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func audioStateChanged(_ sender: UIButton) {
+        changeAudioState()
+    }
+    
     
     func disableAllButtons(){
         for i in 0...8{
