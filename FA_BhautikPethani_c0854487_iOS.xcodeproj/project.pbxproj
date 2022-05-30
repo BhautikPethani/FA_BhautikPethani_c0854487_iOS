@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		ED493EFE2845166300EF6AF3 /* background_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED493EFD2845166300EF6AF3 /* background_music.mp3 */; };
 		ED493F002845356F00EF6AF3 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = ED493EFF2845356F00EF6AF3 /* home.png */; };
-		ED493F02284535DD00EF6AF3 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED493F01284535DD00EF6AF3 /* GameState.swift */; };
+		ED493F042845410800EF6AF3 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED493F032845410800EF6AF3 /* GameState.swift */; };
 		ED87953C2842D88300B65BFF /* Player1.png in Resources */ = {isa = PBXBuildFile; fileRef = ED87953A2842D88300B65BFF /* Player1.png */; };
 		ED87953D2842D88300B65BFF /* Player2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED87953B2842D88300B65BFF /* Player2.png */; };
 		ED8795432842F45100B65BFF /* reload_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8795422842F45100B65BFF /* reload_btn.png */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		ED493EFD2845166300EF6AF3 /* background_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background_music.mp3; sourceTree = "<group>"; };
 		ED493EFF2845356F00EF6AF3 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
-		ED493F01284535DD00EF6AF3 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		ED493F032845410800EF6AF3 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		ED87953A2842D88300B65BFF /* Player1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Player1.png; path = ../../../../../../Player1.png; sourceTree = "<group>"; };
 		ED87953B2842D88300B65BFF /* Player2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Player2.png; path = ../../../../../../Player2.png; sourceTree = "<group>"; };
 		ED8795422842F45100B65BFF /* reload_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reload_btn.png; path = ../../../../../../reload_btn.png; sourceTree = "<group>"; };
@@ -111,7 +111,6 @@
 				EDAD183228418CE1006A3B92 /* Main.storyboard */,
 				EDAD183828418CE3006A3B92 /* Assets.xcassets */,
 				EDAD183D28418CE3006A3B92 /* Info.plist */,
-				EDAD183528418CE1006A3B92 /* FA_BhautikPethani_c0854487_iOS.xcdatamodeld */,
 			);
 			path = FA_BhautikPethani_c0854487_iOS;
 			sourceTree = "<group>";
@@ -156,7 +155,8 @@
 		EDBB78882842C26900BC1E94 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ED493F01284535DD00EF6AF3 /* GameState.swift */,
+				ED493F032845410800EF6AF3 /* GameState.swift */,
+				EDAD183528418CE1006A3B92 /* FA_BhautikPethani_c0854487_iOS.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -250,7 +250,7 @@
 				EDAD183128418CE1006A3B92 /* ViewController.swift in Sources */,
 				EDAD182D28418CE1006A3B92 /* AppDelegate.swift in Sources */,
 				EDAD183728418CE1006A3B92 /* FA_BhautikPethani_c0854487_iOS.xcdatamodeld in Sources */,
-				ED493F02284535DD00EF6AF3 /* GameState.swift in Sources */,
+				ED493F042845410800EF6AF3 /* GameState.swift in Sources */,
 				EDAD182F28418CE1006A3B92 /* SceneDelegate.swift in Sources */,
 				EDBB788C2842CCF100BC1E94 /* BoardViewController.swift in Sources */,
 			);
