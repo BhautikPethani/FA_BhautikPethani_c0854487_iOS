@@ -40,10 +40,11 @@ class ViewController: UIViewController {
                     let player2Score = result.value(forKey: "player2Score") as! Int
                     let board = result.value(forKey: "board") as! [[Int]]
                     let steps = result.value(forKey: "steps") as! Int
-                    let player1Turn = result.value(forKey: "player1turn") as! Bool
-                    let player2Turn = result.value(forKey: "player1turn") as! Bool
+                    let player1Turn = result.value(forKey: "player1Turn") as! Bool
+                    let player2Turn = result.value(forKey: "player2Turn") as! Bool
+                    let gameOver = result.value(forKey: "gameOver") as! Bool
                     
-                    gameState = GameState(player1Score: player1Score, player2Score: player2Score, board: board, steps: steps, player1Turn: player1Turn, player2Turn: player2Turn)
+                    gameState = GameState(player1Score: player1Score, player2Score: player2Score, board: board, steps: steps, player1Turn: player1Turn, player2Turn: player2Turn, gameOver: gameOver)
                     
                     return true
                 }
@@ -55,12 +56,21 @@ class ViewController: UIViewController {
         return false
     }
     
-    @IBAction func newGame(_ sender: Any) {
-        performSegue(withIdentifier: "boardView", sender: self)
+    @IBAction func goToBoardView(_ sender: Any) {
+        performSegue(withIdentifier: "newGame", sender: self)
+    }
+    
+    @IBAction func goToBoardViewWithData(_ sender: Any) {
+        performSegue(withIdentifier: "continueGame", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        _ = segue.destination as? BoardViewController
+        if segue.identifier == "newGame"{
+            let bvc = segue.destination as? BoardViewController
+        }else if segue.identifier == "continueGame"{
+            let bvc = segue.destination as? BoardViewController
+            bvc?.gameState = gameState
+        }
     }
     
 }

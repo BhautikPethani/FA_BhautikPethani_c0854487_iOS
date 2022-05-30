@@ -10,6 +10,9 @@
 		ED493EFE2845166300EF6AF3 /* background_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED493EFD2845166300EF6AF3 /* background_music.mp3 */; };
 		ED493F002845356F00EF6AF3 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = ED493EFF2845356F00EF6AF3 /* home.png */; };
 		ED493F042845410800EF6AF3 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED493F032845410800EF6AF3 /* GameState.swift */; };
+		ED493F072845806E00EF6AF3 /* Player1Win.png in Resources */ = {isa = PBXBuildFile; fileRef = ED493F052845806E00EF6AF3 /* Player1Win.png */; };
+		ED493F082845806E00EF6AF3 /* Player2Win.png in Resources */ = {isa = PBXBuildFile; fileRef = ED493F062845806E00EF6AF3 /* Player2Win.png */; };
+		ED493F0A2845822000EF6AF3 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED493F092845822000EF6AF3 /* ResultViewController.swift */; };
 		ED87953C2842D88300B65BFF /* Player1.png in Resources */ = {isa = PBXBuildFile; fileRef = ED87953A2842D88300B65BFF /* Player1.png */; };
 		ED87953D2842D88300B65BFF /* Player2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED87953B2842D88300B65BFF /* Player2.png */; };
 		ED8795432842F45100B65BFF /* reload_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8795422842F45100B65BFF /* reload_btn.png */; };
@@ -37,6 +40,9 @@
 		ED493EFD2845166300EF6AF3 /* background_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background_music.mp3; sourceTree = "<group>"; };
 		ED493EFF2845356F00EF6AF3 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		ED493F032845410800EF6AF3 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		ED493F052845806E00EF6AF3 /* Player1Win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player1Win.png; sourceTree = "<group>"; };
+		ED493F062845806E00EF6AF3 /* Player2Win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player2Win.png; sourceTree = "<group>"; };
+		ED493F092845822000EF6AF3 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		ED87953A2842D88300B65BFF /* Player1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Player1.png; path = ../../../../../../Player1.png; sourceTree = "<group>"; };
 		ED87953B2842D88300B65BFF /* Player2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Player2.png; path = ../../../../../../Player2.png; sourceTree = "<group>"; };
 		ED8795422842F45100B65BFF /* reload_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reload_btn.png; path = ../../../../../../reload_btn.png; sourceTree = "<group>"; };
@@ -118,6 +124,8 @@
 		EDBB787328419DA000BC1E94 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				ED493F052845806E00EF6AF3 /* Player1Win.png */,
+				ED493F062845806E00EF6AF3 /* Player2Win.png */,
 				ED493EFF2845356F00EF6AF3 /* home.png */,
 				ED87954E28430DD500B65BFF /* cross.png */,
 				ED87954F28430DD500B65BFF /* noughtSign.png */,
@@ -140,6 +148,7 @@
 			children = (
 				EDAD183028418CE1006A3B92 /* ViewController.swift */,
 				EDBB788B2842CCF100BC1E94 /* BoardViewController.swift */,
+				ED493F092845822000EF6AF3 /* ResultViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -227,7 +236,9 @@
 				EDBB787B2842934500BC1E94 /* LaoutBeauty.otf in Resources */,
 				ED87953D2842D88300B65BFF /* Player2.png in Resources */,
 				ED87953C2842D88300B65BFF /* Player1.png in Resources */,
+				ED493F072845806E00EF6AF3 /* Player1Win.png in Resources */,
 				EDAD183928418CE3006A3B92 /* Assets.xcassets in Resources */,
+				ED493F082845806E00EF6AF3 /* Player2Win.png in Resources */,
 				ED87955128430DD500B65BFF /* noughtSign.png in Resources */,
 				ED879549284309E800B65BFF /* noMusic.png in Resources */,
 				EDBB787528419DB200BC1E94 /* splashScreen.gif in Resources */,
@@ -249,6 +260,7 @@
 			files = (
 				EDAD183128418CE1006A3B92 /* ViewController.swift in Sources */,
 				EDAD182D28418CE1006A3B92 /* AppDelegate.swift in Sources */,
+				ED493F0A2845822000EF6AF3 /* ResultViewController.swift in Sources */,
 				EDAD183728418CE1006A3B92 /* FA_BhautikPethani_c0854487_iOS.xcdatamodeld in Sources */,
 				ED493F042845410800EF6AF3 /* GameState.swift in Sources */,
 				EDAD182F28418CE1006A3B92 /* SceneDelegate.swift in Sources */,

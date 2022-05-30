@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="GameStateDB" representedClassName="GameStateDB" syncable="YES" codeGenerationType="class">
         <attribute name="board" optional="YES" attributeType="Transformable"/>
+        <attribute name="gameOver" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="player1Score" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="player1Turn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="player2Score" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
@@ -9,6 +10,6 @@
         <attribute name="steps" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="GameStateDB" positionX="-63" positionY="-18" width="128" height="119"/>
+        <element name="GameStateDB" positionX="-63" positionY="-18" width="128" height="14"/>
     </elements>
 </model>

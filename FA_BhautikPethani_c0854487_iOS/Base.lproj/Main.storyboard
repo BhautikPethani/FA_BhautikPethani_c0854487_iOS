@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -68,8 +69,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fda-ta-68f"/>
-                                    <segue destination="iTU-VR-hyA" kind="presentation" identifier="boardView" modalPresentationStyle="fullScreen" id="PDb-t5-Hfa"/>
+                                    <action selector="goToBoardView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sHl-K9-Ou4"/>
+                                    <segue destination="iTU-VR-hyA" kind="presentation" identifier="newGame" modalPresentationStyle="fullScreen" id="i2S-Is-062"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDj-RU-pQq">
@@ -88,6 +89,10 @@
                                         <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goToBoardViewWithData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rlp-v8-Ix3"/>
+                                    <segue destination="iTU-VR-hyA" kind="presentation" identifier="continueGame" modalPresentationStyle="fullScreen" id="3bP-WQ-LW4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -117,6 +122,7 @@
                             <constraint firstItem="fnk-iP-4Qj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="144" id="z3v-ES-eaW"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="SqH-cV-hkB"/>
                     <connections>
                         <outlet property="continueBtn" destination="UDj-RU-pQq" id="iAn-3e-SUa"/>
                     </connections>
@@ -316,6 +322,9 @@
                                                 <color key="backgroundColor" red="1" green="0.2277272316" blue="0.59896724810000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="newGame:" destination="iTU-VR-hyA" eventType="touchUpInside" id="EGU-9U-aOm"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcD-NB-Itq">
                                         <rect key="frame" x="100.33333333333334" y="0.0" width="79.333333333333343" height="60"/>
@@ -325,6 +334,10 @@
                                                 <color key="backgroundColor" red="1" green="0.2277272316" blue="0.59896724810000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="goBackToHome:" destination="iTU-VR-hyA" eventType="touchUpInside" id="sTM-Tf-d53"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" identifier="home" modalPresentationStyle="fullScreen" id="wvU-N8-zGY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mB2-gZ-ocx">
                                         <rect key="frame" x="200.66666666666666" y="0.0" width="79.333333333333343" height="60"/>
@@ -379,7 +392,9 @@
                     <connections>
                         <outlet property="audioBtn" destination="mB2-gZ-ocx" id="u5u-jt-5p5"/>
                         <outlet property="player1Img" destination="bN8-HZ-l9c" id="8yC-8h-SFi"/>
+                        <outlet property="player1ScoreLabel" destination="89V-uc-3MM" id="BvF-BC-yqR"/>
                         <outlet property="player2Img" destination="kRE-eR-Sbb" id="rhH-5v-vQr"/>
+                        <outlet property="player2ScoreLabel" destination="4sf-NH-QdW" id="XfK-b9-Ox2"/>
                         <outletCollection property="boardBox" destination="0Aa-A0-ouD" collectionClass="NSMutableArray" id="mHv-RU-vnV"/>
                         <outletCollection property="boardBox" destination="k7F-Ke-GCT" collectionClass="NSMutableArray" id="hVB-O1-EHU"/>
                         <outletCollection property="boardBox" destination="VoQ-TX-7eD" collectionClass="NSMutableArray" id="Luo-MW-6cS"/>
@@ -395,7 +410,91 @@
             </objects>
             <point key="canvasLocation" x="693.60000000000002" y="105.66502463054188"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="azb-kh-VF9">
+            <objects>
+                <viewController id="bq6-Sj-x3W" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="duh-vx-Xtu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ewa-D8-DRY">
+                                <rect key="frame" x="17" y="274" width="340" height="352"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MIe-Bx-ctr">
+                                        <rect key="frame" x="28" y="8" width="284" height="239"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="MIe-Bx-ctr" secondAttribute="height" multiplier="284:239" id="AFs-yT-x4k"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUl-IN-2UR">
+                                        <rect key="frame" x="72" y="267" width="79.333333333333314" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="h6m-gH-ILT"/>
+                                            <constraint firstAttribute="width" constant="79.329999999999998" id="phe-2R-ea7"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <backgroundConfiguration key="background" cornerRadius="50" image="reload_btn.png" imageContentMode="scaleAspectFit">
+                                                <color key="backgroundColor" red="1" green="0.2277272316" blue="0.59896724810000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="newGame:" destination="iTU-VR-hyA" eventType="touchUpInside" id="De5-9L-lmz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ben-Gf-vyN">
+                                        <rect key="frame" x="189" y="267" width="79.333333333333314" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="79.329999999999998" id="qWq-KM-1cS"/>
+                                            <constraint firstAttribute="height" constant="60" id="uD7-Ag-k4K"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <backgroundConfiguration key="background" cornerRadius="50" image="home.png" imageContentMode="scaleAspectFit">
+                                                <color key="backgroundColor" red="1" green="0.2277272316" blue="0.59896724810000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="goBackToHome:" destination="iTU-VR-hyA" eventType="touchUpInside" id="0rb-tW-gBY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="MIe-Bx-ctr" firstAttribute="leading" secondItem="Ewa-D8-DRY" secondAttribute="leading" constant="28" id="1bD-JU-q5N"/>
+                                    <constraint firstItem="aUl-IN-2UR" firstAttribute="top" secondItem="MIe-Bx-ctr" secondAttribute="bottom" constant="20" id="4ag-8c-cXY"/>
+                                    <constraint firstAttribute="width" secondItem="Ewa-D8-DRY" secondAttribute="height" multiplier="85:88" id="5l2-yt-llc"/>
+                                    <constraint firstItem="MIe-Bx-ctr" firstAttribute="top" secondItem="Ewa-D8-DRY" secondAttribute="top" constant="8" id="DOO-iy-t4z"/>
+                                    <constraint firstAttribute="trailing" secondItem="MIe-Bx-ctr" secondAttribute="trailing" constant="28" id="NHb-Dw-hRX"/>
+                                    <constraint firstItem="ben-Gf-vyN" firstAttribute="top" secondItem="MIe-Bx-ctr" secondAttribute="bottom" constant="20" id="NLv-Ja-VJs"/>
+                                    <constraint firstAttribute="trailing" secondItem="ben-Gf-vyN" secondAttribute="trailing" constant="71.670000000000002" id="ONU-9H-QZL"/>
+                                    <constraint firstAttribute="bottom" secondItem="ben-Gf-vyN" secondAttribute="bottom" constant="25" id="Rdt-MI-6Yg"/>
+                                    <constraint firstAttribute="bottom" secondItem="aUl-IN-2UR" secondAttribute="bottom" constant="25" id="WO9-HW-rN5"/>
+                                    <constraint firstItem="ben-Gf-vyN" firstAttribute="leading" secondItem="aUl-IN-2UR" secondAttribute="trailing" constant="37.670000000000002" id="eA9-St-pZB"/>
+                                    <constraint firstItem="aUl-IN-2UR" firstAttribute="top" secondItem="MIe-Bx-ctr" secondAttribute="bottom" constant="20" id="kaH-yT-0WP"/>
+                                    <constraint firstItem="ben-Gf-vyN" firstAttribute="leading" secondItem="aUl-IN-2UR" secondAttribute="trailing" constant="37.670000000000002" id="wFQ-QC-SU1"/>
+                                    <constraint firstItem="aUl-IN-2UR" firstAttribute="leading" secondItem="Ewa-D8-DRY" secondAttribute="leading" constant="72" id="xqt-wa-t16"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UdU-ua-ctt"/>
+                        <constraints>
+                            <constraint firstItem="Ewa-D8-DRY" firstAttribute="top" secondItem="UdU-ua-ctt" secondAttribute="top" constant="230" id="FCn-70-UpX"/>
+                            <constraint firstItem="UdU-ua-ctt" firstAttribute="bottom" secondItem="Ewa-D8-DRY" secondAttribute="bottom" constant="152" id="JWm-uc-gzg"/>
+                            <constraint firstItem="Ewa-D8-DRY" firstAttribute="leading" secondItem="UdU-ua-ctt" secondAttribute="leading" constant="17" id="KrB-0E-WjZ"/>
+                            <constraint firstItem="UdU-ua-ctt" firstAttribute="trailing" secondItem="Ewa-D8-DRY" secondAttribute="trailing" constant="18" id="LM5-PI-SgA"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zfd-e9-p3Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1413.5999999999999" y="105.66502463054188"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3bP-WQ-LW4"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Player1.png" width="360" height="360"/>
         <image name="Player2.png" width="360" height="360"/>
@@ -404,5 +503,8 @@
         <image name="reload_btn.png" width="360" height="360"/>
         <image name="textLogo.png" width="360" height="144"/>
         <image name="vs.png" width="360" height="144"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
