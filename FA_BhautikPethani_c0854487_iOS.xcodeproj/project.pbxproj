@@ -13,6 +13,7 @@
 		ED493F072845806E00EF6AF3 /* Player1Win.png in Resources */ = {isa = PBXBuildFile; fileRef = ED493F052845806E00EF6AF3 /* Player1Win.png */; };
 		ED493F082845806E00EF6AF3 /* Player2Win.png in Resources */ = {isa = PBXBuildFile; fileRef = ED493F062845806E00EF6AF3 /* Player2Win.png */; };
 		ED493F0A2845822000EF6AF3 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED493F092845822000EF6AF3 /* ResultViewController.swift */; };
+		ED493F0C28458A4E00EF6AF3 /* draw.png in Resources */ = {isa = PBXBuildFile; fileRef = ED493F0B28458A4E00EF6AF3 /* draw.png */; };
 		ED87953C2842D88300B65BFF /* Player1.png in Resources */ = {isa = PBXBuildFile; fileRef = ED87953A2842D88300B65BFF /* Player1.png */; };
 		ED87953D2842D88300B65BFF /* Player2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED87953B2842D88300B65BFF /* Player2.png */; };
 		ED8795432842F45100B65BFF /* reload_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8795422842F45100B65BFF /* reload_btn.png */; };
@@ -43,6 +44,7 @@
 		ED493F052845806E00EF6AF3 /* Player1Win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player1Win.png; sourceTree = "<group>"; };
 		ED493F062845806E00EF6AF3 /* Player2Win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player2Win.png; sourceTree = "<group>"; };
 		ED493F092845822000EF6AF3 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		ED493F0B28458A4E00EF6AF3 /* draw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = draw.png; sourceTree = "<group>"; };
 		ED87953A2842D88300B65BFF /* Player1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Player1.png; path = ../../../../../../Player1.png; sourceTree = "<group>"; };
 		ED87953B2842D88300B65BFF /* Player2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Player2.png; path = ../../../../../../Player2.png; sourceTree = "<group>"; };
 		ED8795422842F45100B65BFF /* reload_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reload_btn.png; path = ../../../../../../reload_btn.png; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		EDBB787328419DA000BC1E94 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				ED493F0B28458A4E00EF6AF3 /* draw.png */,
 				ED493F052845806E00EF6AF3 /* Player1Win.png */,
 				ED493F062845806E00EF6AF3 /* Player2Win.png */,
 				ED493EFF2845356F00EF6AF3 /* home.png */,
@@ -245,6 +248,7 @@
 				ED8795432842F45100B65BFF /* reload_btn.png in Resources */,
 				EDBB78872842B34300BC1E94 /* vs.png in Resources */,
 				ED8795452843048800B65BFF /* pause_btn.png in Resources */,
+				ED493F0C28458A4E00EF6AF3 /* draw.png in Resources */,
 				EDBB78832842A9EC00BC1E94 /* textLogo.png in Resources */,
 				EDAD183428418CE1006A3B92 /* Main.storyboard in Resources */,
 				ED879548284309E800B65BFF /* music.png in Resources */,

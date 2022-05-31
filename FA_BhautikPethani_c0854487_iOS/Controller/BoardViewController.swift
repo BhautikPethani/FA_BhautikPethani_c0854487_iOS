@@ -29,6 +29,7 @@ class BoardViewController: UIViewController {
     
     var gameState:GameState? = nil;
     var lastPosition: [Any] = [];
+    var winner: Int = 0;
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var managedContext: NSManagedObjectContext!
     
@@ -195,8 +196,22 @@ class BoardViewController: UIViewController {
         if(gameState!.steps>=5){
             if(checkResult()){
                 gameState!.gameOver = true
-                (gameState!.player1Turn) ? (gameState!.player1Score+=1) : (gameState!.player2Score+=1)
+                if(gameState!.player1Turn){
+                    gameState!.player1Score+=1
+                    winner = 1
+                    performSegue(withIdentifier: "winnerScreen", sender: self)
+                } else {
+                    gameState!.player2Score+=1
+                    winner = 2
+                    performSegue(withIdentifier: "winnerScreen", sender: self)
+                }
                 disableAllButtons()
+            }
+            
+            if(gameState!.steps>=9){
+                gameState!.gameOver = true
+                winner = 0
+                performSegue(withIdentifier: "winnerScreen", sender: self)
             }
         }
         
@@ -270,7 +285,15 @@ class BoardViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let hvc = segue.destination as? ViewController
+        if(segue.identifier == "home"){
+            _ = segue.destination as? ViewController
+        }
+        else if(segue.identifier == "winnerScreen"){
+            let rvc = segue.destination as? ResultViewController
+            rvc?.gameState = gameState
+            rvc?.winnerBackground = (winner==2) ? boardColor2 : boardColor1
+            rvc?.winner = winner
+        }
     }
     
     @IBAction func audioStateChanged(_ sender: UIButton) {
