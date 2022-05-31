@@ -348,7 +348,7 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="35"/>
+                                                <integer key="value" value="30"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -504,8 +504,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="YMO-wA-Bps"/>
         <segue reference="JI5-cf-GzR"/>
-        <segue reference="357-em-6et"/>
+        <segue reference="wvU-N8-zGY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Player1.png" width="360" height="360"/>

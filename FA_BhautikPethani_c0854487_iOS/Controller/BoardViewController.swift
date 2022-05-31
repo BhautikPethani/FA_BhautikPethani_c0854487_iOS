@@ -43,6 +43,7 @@ class BoardViewController: UIViewController {
         } catch{
             print(error)
         }
+        audioPlayer.numberOfLoops = 1
         
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ED493EFE2845166300EF6AF3 /* background_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED493EFD2845166300EF6AF3 /* background_music.mp3 */; };
 		ED493F002845356F00EF6AF3 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = ED493EFF2845356F00EF6AF3 /* home.png */; };
 		ED493F042845410800EF6AF3 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED493F032845410800EF6AF3 /* GameState.swift */; };
 		ED493F072845806E00EF6AF3 /* Player1Win.png in Resources */ = {isa = PBXBuildFile; fileRef = ED493F052845806E00EF6AF3 /* Player1Win.png */; };
@@ -17,7 +16,6 @@
 		ED87953C2842D88300B65BFF /* Player1.png in Resources */ = {isa = PBXBuildFile; fileRef = ED87953A2842D88300B65BFF /* Player1.png */; };
 		ED87953D2842D88300B65BFF /* Player2.png in Resources */ = {isa = PBXBuildFile; fileRef = ED87953B2842D88300B65BFF /* Player2.png */; };
 		ED8795432842F45100B65BFF /* reload_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8795422842F45100B65BFF /* reload_btn.png */; };
-		ED8795452843048800B65BFF /* pause_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8795442843048800B65BFF /* pause_btn.png */; };
 		ED879548284309E800B65BFF /* music.png in Resources */ = {isa = PBXBuildFile; fileRef = ED879546284309E800B65BFF /* music.png */; };
 		ED879549284309E800B65BFF /* noMusic.png in Resources */ = {isa = PBXBuildFile; fileRef = ED879547284309E800B65BFF /* noMusic.png */; };
 		ED87955028430DD500B65BFF /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = ED87954E28430DD500B65BFF /* cross.png */; };
@@ -29,6 +27,7 @@
 		EDAD183728418CE1006A3B92 /* FA_BhautikPethani_c0854487_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDAD183528418CE1006A3B92 /* FA_BhautikPethani_c0854487_iOS.xcdatamodeld */; };
 		EDAD183928418CE3006A3B92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDAD183828418CE3006A3B92 /* Assets.xcassets */; };
 		EDAD183C28418CE3006A3B92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDAD183A28418CE3006A3B92 /* LaunchScreen.storyboard */; };
+		EDBA07A1284595D0006A6EDD /* background_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EDBA07A0284595D0006A6EDD /* background_music.mp3 */; };
 		EDBB787528419DB200BC1E94 /* splashScreen.gif in Resources */ = {isa = PBXBuildFile; fileRef = EDBB787428419DB200BC1E94 /* splashScreen.gif */; };
 		EDBB787B2842934500BC1E94 /* LaoutBeauty.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDBB787A2842934500BC1E94 /* LaoutBeauty.otf */; };
 		EDBB78832842A9EC00BC1E94 /* textLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = EDBB78822842A9EC00BC1E94 /* textLogo.png */; };
@@ -38,7 +37,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		ED493EFD2845166300EF6AF3 /* background_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background_music.mp3; sourceTree = "<group>"; };
 		ED493EFF2845356F00EF6AF3 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		ED493F032845410800EF6AF3 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		ED493F052845806E00EF6AF3 /* Player1Win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player1Win.png; sourceTree = "<group>"; };
@@ -48,7 +46,6 @@
 		ED87953A2842D88300B65BFF /* Player1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Player1.png; path = ../../../../../../Player1.png; sourceTree = "<group>"; };
 		ED87953B2842D88300B65BFF /* Player2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Player2.png; path = ../../../../../../Player2.png; sourceTree = "<group>"; };
 		ED8795422842F45100B65BFF /* reload_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reload_btn.png; path = ../../../../../../reload_btn.png; sourceTree = "<group>"; };
-		ED8795442843048800B65BFF /* pause_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause_btn.png; path = ../../../../../../pause_btn.png; sourceTree = "<group>"; };
 		ED879546284309E800B65BFF /* music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music.png; sourceTree = "<group>"; };
 		ED879547284309E800B65BFF /* noMusic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noMusic.png; sourceTree = "<group>"; };
 		ED87954E28430DD500B65BFF /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cross.png; path = ../../../../../../cross.png; sourceTree = "<group>"; };
@@ -62,6 +59,7 @@
 		EDAD183828418CE3006A3B92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDAD183B28418CE3006A3B92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDAD183D28418CE3006A3B92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDBA07A0284595D0006A6EDD /* background_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background_music.mp3; sourceTree = "<group>"; };
 		EDBB787428419DB200BC1E94 /* splashScreen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = splashScreen.gif; sourceTree = "<group>"; };
 		EDBB787A2842934500BC1E94 /* LaoutBeauty.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LaoutBeauty.otf; sourceTree = "<group>"; };
 		EDBB78822842A9EC00BC1E94 /* textLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textLogo.png; sourceTree = "<group>"; };
@@ -84,7 +82,7 @@
 		ED493EFC2845163900EF6AF3 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				ED493EFD2845166300EF6AF3 /* background_music.mp3 */,
+				EDBA07A0284595D0006A6EDD /* background_music.mp3 */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -134,7 +132,6 @@
 				ED87954F28430DD500B65BFF /* noughtSign.png */,
 				ED879546284309E800B65BFF /* music.png */,
 				ED879547284309E800B65BFF /* noMusic.png */,
-				ED8795442843048800B65BFF /* pause_btn.png */,
 				ED8795422842F45100B65BFF /* reload_btn.png */,
 				ED87953A2842D88300B65BFF /* Player1.png */,
 				ED87953B2842D88300B65BFF /* Player2.png */,
@@ -232,7 +229,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED87955028430DD500B65BFF /* cross.png in Resources */,
-				ED493EFE2845166300EF6AF3 /* background_music.mp3 in Resources */,
 				ED493F002845356F00EF6AF3 /* home.png in Resources */,
 				EDAD183C28418CE3006A3B92 /* LaunchScreen.storyboard in Resources */,
 				EDBB78852842AC6F00BC1E94 /* textLogo2.png in Resources */,
@@ -247,8 +243,8 @@
 				EDBB787528419DB200BC1E94 /* splashScreen.gif in Resources */,
 				ED8795432842F45100B65BFF /* reload_btn.png in Resources */,
 				EDBB78872842B34300BC1E94 /* vs.png in Resources */,
-				ED8795452843048800B65BFF /* pause_btn.png in Resources */,
 				ED493F0C28458A4E00EF6AF3 /* draw.png in Resources */,
+				EDBA07A1284595D0006A6EDD /* background_music.mp3 in Resources */,
 				EDBB78832842A9EC00BC1E94 /* textLogo.png in Resources */,
 				EDAD183428418CE1006A3B92 /* Main.storyboard in Resources */,
 				ED879548284309E800B65BFF /* music.png in Resources */,
